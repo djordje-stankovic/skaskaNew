@@ -14,3 +14,6 @@ desktop.ini
 # Backup/temp
 *.bak
 *.tmp
+
+# Originalne viber slike (kopirane u images/gallery sa čistim imenima)
+images/skaskaNewpic/
