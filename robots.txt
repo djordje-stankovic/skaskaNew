@@ -1,0 +1,23 @@
+# Robots.txt for Skaska
+# https://skaskabrandy.com/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://skaskabrandy.com/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Yandex
+Allow: /

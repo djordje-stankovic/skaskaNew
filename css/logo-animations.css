@@ -1,0 +1,914 @@
+/* =============================================
+   LOGO ANIMATIONS FOR ALL PAGES
+   ============================================= */
+
+/* Gallery Animation - Reveal from bottom */
+.logo-gallery-animated {
+  position: relative;
+  overflow: visible;
+}
+
+.logo-gallery-animated .logo-icon {
+  animation: logoGalleryReveal 2s ease-out 0.5s forwards;
+  opacity: 0;
+  transform-origin: center center;
+}
+
+.logo-gallery-animated .logo-text {
+  animation: logoTextGalleryReveal 2s ease-out 0.5s forwards;
+  opacity: 0;
+  transform-origin: left center;
+}
+
+@keyframes logoGalleryReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes logoTextGalleryReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo-gallery-animated.animation-done .logo-icon,
+.logo-gallery-animated.animation-done .logo-text {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+
+/* Distillery Animation â€" logo fade-in odozdo, natpis fade-in odozgo */
+.logo-distillery-animated {
+  position: relative;
+  overflow: visible;
+}
+
+.logo-distillery-animated .logo-icon {
+  opacity: 0;
+  animation: logoDistilleryFadeInFromBottom 0.8s ease-out 0.3s forwards;
+}
+
+.logo-distillery-animated .logo-text-final {
+  position: relative;
+  opacity: 0;
+  height: 39px !important;
+  width: auto;
+  display: block;
+  margin-left: 0;
+  animation: logoDistilleryFadeInFromTop 0.8s ease-out 0.3s forwards;
+}
+
+@keyframes logoDistilleryFadeInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes logoDistilleryFadeInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+.logo-distillery-animated.animation-done .logo-icon,
+.logo-distillery-animated.animation-done .logo-text-final {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 768px) {
+  .logo-distillery-animated .logo-text-final {
+    height: 25px !important;
+  }
+  .header.scrolled .logo-distillery-animated .logo-text-final {
+    height: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-distillery-animated .logo-text-final {
+    height: 20px !important;
+  }
+  .header.scrolled .logo-distillery-animated .logo-text-final {
+    height: 20px !important;
+  }
+}
+
+/* News Animation - Slide from top */
+.logo-news-animated {
+  position: relative;
+  overflow: visible;
+}
+
+.logo-news-animated .logo-icon {
+  animation: logoNewsSlide 2s ease-out 0.5s forwards;
+  opacity: 0;
+  transform-origin: center center;
+}
+
+.logo-news-animated .logo-text {
+  animation: logoTextNewsSlide 2s ease-out 0.5s forwards;
+  opacity: 0;
+  transform-origin: left center;
+}
+
+@keyframes logoNewsSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes logoTextNewsSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo-news-animated.animation-done .logo-icon,
+.logo-news-animated.animation-done .logo-text {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+
+/* Where-to-buy Animation - Shopping Cart; visina kao Contact – auto, od sadržaja (finalni logo), da nema teleporta */
+.logo-where-animated {
+  position: relative;
+  overflow: visible;
+  height: auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: auto;
+  flex-shrink: 0;
+  margin-right: auto;
+}
+
+/* Cart container */
+.cart-where {
+  position: fixed;
+  left: -220px;
+  top: 70px;
+  transform: translateY(-50%) scaleX(-1) scale(1.3);
+  font-size: 37px;
+  font-weight: 100;
+  animation: cartMoveWhere 3s linear 0.5s forwards;
+  filter: hue-rotate(15deg) saturate(3) brightness(1.3) drop-shadow(0 0 8px rgba(188, 139, 11, 0.8));
+  z-index: 999;
+  pointer-events: none;
+}
+
+/* Logo inside cart */
+.cart-logo-where {
+  position: absolute;
+  top: -20%;
+  left: 25%;
+  width: 23.5px;
+  height: 31.5px;
+  z-index: 999;
+}
+
+.cart-logo-where img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 1;
+  transform: scaleX(-1);
+  transform-origin: center;
+  filter: brightness(1.2) contrast(1.3) drop-shadow(0 0 4px rgba(188, 139, 11, 0.6));
+  animation: logoEjectWhere 3s ease-out 0.5s forwards;
+}
+
+/* Text inside cart */
+.cart-text-where {
+  position: absolute;
+  top: 7%;
+  left: 40%;
+  z-index: 999;
+}
+
+.cart-text-where img {
+  height: 19.4px;
+  width: auto;
+  object-fit: contain;
+  opacity: 1;
+  transform: scaleX(-1) translate(0, 0) scale(1) rotate(-42deg);
+  transform-origin: center;
+  margin-left: -41px;
+  margin-bottom: 46.8px;
+  filter: brightness(0) invert(1) contrast(1.2) drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
+  animation: textEjectWhere 3s ease-in 0.5s forwards;
+}
+
+/* Final logo – od početka na mestu (static), samo fade in kad korpa nestane – kao Contact */
+.final-logo-where {
+  position: static;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  opacity: 0;
+  z-index: 1;
+  transform: none;
+  transform-origin: left center;
+  animation: finalRevealWhere 0.6s ease-out 3.2s forwards;
+  width: auto;
+  justify-content: flex-start;
+  pointer-events: none;
+}
+
+/* Iste veličine kao ostale stranice: 100px/39px kad nije skrol, 80px/32px kad jeste (u styles.css) */
+.final-logo-where .logo-icon {
+  width: 100px;
+  height: 100px;
+  min-width: 100px;
+  min-height: 100px;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: height 0.3s ease, width 0.3s ease;
+}
+
+.final-logo-where .logo-text {
+  height: 39px;
+  min-height: 39px;
+  width: auto;
+  object-fit: contain;
+  margin-left: 0;
+  flex-shrink: 0;
+  transition: height 0.3s ease;
+}
+
+@keyframes cartMoveWhere {
+  0% {
+    left: -220px;
+    transform: translateY(-50%) scaleX(-1) scale(1.3) rotate(0deg);
+  }
+  60% {
+    left: 120px;
+    transform: translateY(-50%) scaleX(-1) scale(1.3) rotate(0deg);
+  }
+  65% {
+    left: 120px;
+    transform: translateY(-50%) scaleX(-1) scale(1.3) rotate(-20deg);
+  }
+  70% {
+    left: 120px;
+    transform: translateY(-50%) scaleX(-1) scale(1.3) rotate(20deg);
+  }
+  75% {
+    left: 120px;
+    transform: translateY(-50%) scaleX(-1) scale(1.3) rotate(-10deg);
+  }
+  80% {
+    left: 120px;
+    transform: translateY(-50%) scaleX(-1) scale(1.3) rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    left: 120px;
+    transform: translateY(-50%) scaleX(-1) scale(1.3) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  @keyframes cartMoveWhere {
+    0% {
+      left: -150px;
+      transform: translateY(-50%) scaleX(-1) scale(1.3) rotate(0deg);
+    }
+    60% {
+      left: 80px;
+      transform: translateY(-50%) scaleX(-1) scale(1.3) rotate(0deg);
+    }
+    65% {
+      left: 80px;
+      transform: translateY(-50%) scaleX(-1) scale(1.3) rotate(-20deg);
+    }
+    70% {
+      left: 80px;
+      transform: translateY(-50%) scaleX(-1) scale(1.3) rotate(20deg);
+    }
+    75% {
+      left: 80px;
+      transform: translateY(-50%) scaleX(-1) scale(1.3) rotate(-10deg);
+    }
+    80% {
+      left: 80px;
+      transform: translateY(-50%) scaleX(-1) scale(1.3) rotate(0deg);
+      opacity: 0;
+    }
+    100% {
+      left: 80px;
+      transform: translateY(-50%) scaleX(-1) scale(1.3) rotate(0deg);
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes logoEjectWhere {
+  0% {
+    opacity: 1;
+    transform: scaleX(-1) translate(0, 0) scale(1);
+  }
+  60% {
+    opacity: 1;
+    transform: scaleX(-1) translate(0, 0) scale(1);
+  }
+  75% {
+    opacity: 1;
+    transform: scaleX(-1) translate(0, 40px) scale(1);
+  }
+  85% {
+    opacity: 0.5;
+    transform: scaleX(-1) translate(0, 60px) scale(0.8);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(-1) translate(0, 75px) scale(0.6);
+  }
+}
+
+@media (max-width: 768px) {
+  @keyframes logoEjectWhere {
+    0% {
+      opacity: 1;
+      transform: scaleX(-1) translate(0, 0) scale(1);
+    }
+    60% {
+      opacity: 1;
+      transform: scaleX(-1) translate(0, 0) scale(1);
+    }
+    75% {
+      opacity: 1;
+      transform: scaleX(-1) translate(0, 30px) scale(1);
+    }
+    85% {
+      opacity: 0.5;
+      transform: scaleX(-1) translate(0, 45px) scale(0.8);
+    }
+    100% {
+      opacity: 0;
+      transform: scaleX(-1) translate(0, 55px) scale(0.6);
+    }
+  }
+}
+
+@keyframes textEjectWhere {
+  0% {
+    opacity: 1;
+    transform: scaleX(-1) translate(0, 0) scale(1) rotate(-42deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scaleX(-1) translate(0, 0) scale(1) rotate(-42deg);
+  }
+  75% {
+    opacity: 1;
+    transform: scaleX(-1) translate(0, 80px) scale(1) rotate(-42deg);
+  }
+  85% {
+    opacity: 0.5;
+    transform: scaleX(-1) translate(0, 120px) scale(0.8) rotate(-42deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(-1) translate(0, 150px) scale(0.6) rotate(-42deg);
+  }
+}
+
+@media (max-width: 768px) {
+  @keyframes textEjectWhere {
+    0% {
+      opacity: 1;
+      transform: scaleX(-1) translate(0, 0) scale(1) rotate(-42deg);
+    }
+    60% {
+      opacity: 1;
+      transform: scaleX(-1) translate(0, 0) scale(1) rotate(-42deg);
+    }
+    75% {
+      opacity: 1;
+      transform: scaleX(-1) translate(0, 60px) scale(1) rotate(-42deg);
+    }
+    85% {
+      opacity: 0.5;
+      transform: scaleX(-1) translate(0, 90px) scale(0.8) rotate(-42deg);
+    }
+    100% {
+      opacity: 0;
+      transform: scaleX(-1) translate(0, 110px) scale(0.6) rotate(-42deg);
+    }
+  }
+}
+
+/* Samo fade in – logo i natpis ostaju na mestu */
+@keyframes finalRevealWhere {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.logo-where-animated.animation-done .cart-where,
+.logo-where-animated.animation-done .cart-logo-where,
+.logo-where-animated.animation-done .cart-text-where {
+  display: none;
+}
+
+.logo-where-animated.animation-done .final-logo-where {
+  animation: none;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.logo-where-animated.animation-done {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: auto;
+  flex-shrink: 0;
+  margin-right: auto;
+}
+
+/* Ne dirati width/height – ostaju 100px/39px ili 80px/32px prema header stanju */
+.logo-where-animated.animation-done .final-logo-where .logo-icon,
+.logo-where-animated.animation-done .final-logo-where .logo-text {
+  position: static;
+  transform: none;
+}
+
+/* Mobile: finalni logo uvek u normalnom toku â€“ samo opacity + translateY, bez promene position */
+/* Mobile adjustments for where-to-buy animation */
+@media (max-width: 768px) {
+  /* Od poÄŤetka isti layout kao kad je header smanjen (scrolled) â€“ da logo ne â€žskaÄŤeâ€ť kad se skroluje */
+  .logo-where-animated {
+    height: auto;
+    min-height: 0;
+    align-items: center;
+  }
+  
+  .cart-where {
+    top: 50px;
+    font-size: 28px;
+  }
+  
+  .cart-logo-where {
+    width: 18px;
+    height: 24px;
+  }
+  
+  .cart-text-where img {
+    height: 14px;
+    margin-left: -30px;
+    margin-bottom: 35px;
+  }
+  
+  /* Na mobilnoj: finalni logo OD POÄŚETKA u normalnom toku (position:static) â€“ nikad ne menja mesto, samo se pojavi odozdo */
+  .logo-where-animated .final-logo-where {
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: auto;
+    justify-content: flex-start;
+    opacity: 0;
+    animation: finalRevealWhere 0.6s ease-out 3.2s forwards;
+    pointer-events: none;
+  }
+  
+  .logo-where-animated.animation-done .final-logo-where {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+  
+  /* Iste veličine kao ostale stranice na mobilnoj: 65px/25px (768px), scrolled 50px/20px u styles.css */
+  .final-logo-where .logo-icon {
+    width: 65px;
+    height: 65px;
+    min-width: 65px;
+    min-height: 65px;
+  }
+  
+  .final-logo-where .logo-text {
+    height: 25px;
+    min-height: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Iste veličine kao ostale stranice na malom mobilnom: 50px/20px, scrolled 40px/16px u styles.css */
+  .final-logo-where .logo-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+  }
+  
+  .final-logo-where .logo-text {
+    height: 20px;
+    min-height: 20px;
+  }
+}
+
+/* Contact Animation – koverta + logo u koverti, pa finalni logo. Ikonica u koverti: 13px desktop, 8px mobil.
+   overflow: hidden da animacija ne pomera header. */
+
+.logo-contact-animated {
+  position: relative;
+  overflow: hidden;
+  height: auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  contain: layout;
+}
+
+.envelope-contact {
+  position: absolute;
+  font-size: 60px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  animation: envelopeAppearContact 0.8s ease-out 0.5s forwards,
+             envelopeDisappearContact 0.6s ease-in 2.5s forwards;
+  filter: drop-shadow(0 0 10px rgba(188, 139, 11, 0.6));
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Ikonica na pošti: desktop 9px, mobil 13px */
+.logo-in-envelope-contact {
+  position: absolute;
+  left: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 62px;
+  height: 40px;
+  opacity: 0;
+  z-index: 11;
+  animation: logoInEnvelopeContact 1.2s ease-out 1.3s forwards,
+             logoDisappearContact 0.5s ease-in 2.5s forwards;
+  pointer-events: none;
+}
+
+.logo-in-envelope-contact img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(188, 139, 11, 0.8));
+}
+
+/* Fade in kreće tek kad pošta nestane; iste dimenzije tokom celog fade-ina */
+.final-logo-contact {
+  position: static;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  opacity: 0;
+  z-index: 5;
+  pointer-events: none;
+  transform: translateY(0);
+  transform-origin: left center;
+  min-height: 100px; /* fiksna visina – bez promene dimenzija pri fade in */
+  animation: finalLogoRevealContact 1s ease-out 3.25s forwards; /* nakon što pošta nestane (~3.1s) */
+}
+
+.final-logo-contact .logo-icon {
+  width: 100px;
+  height: 100px;
+  min-width: 100px;
+  min-height: 100px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.final-logo-contact .logo-text {
+  height: 39px;
+  min-height: 39px;
+  width: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+@keyframes envelopeAppearContact {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.5) translateY(30px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1) translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1) translateY(0);
+  }
+}
+
+@keyframes logoInEnvelopeContact {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(0) scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0) scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0) scale(1);
+  }
+}
+
+@keyframes envelopeDisappearContact {
+  0% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.5) translateY(-30px);
+  }
+}
+
+@keyframes logoDisappearContact {
+  0% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(0) scale(0.5);
+  }
+}
+
+/* Logo + Skaska: samo vertikala (top), left se ne dira */
+@keyframes finalLogoRevealContact {
+  0% {
+    opacity: 0;
+    transform: translateX(0) translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* Nakon animacije pošta nestane, ostane samo finalni logo */
+.logo-contact-animated.animation-done .envelope-contact,
+.logo-contact-animated.animation-done .logo-in-envelope-contact {
+  display: none;
+}
+
+.logo-contact-animated.animation-done {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: auto;
+  flex-shrink: 0;
+  margin-right: auto;
+}
+
+/* Ista left pozicija – eksplicitno translateY(0) da nema teleporta */
+.logo-contact-animated.animation-done .final-logo-contact {
+  animation: none;
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+  pointer-events: auto;
+}
+
+.logo-contact-animated.animation-done .final-logo-contact .logo-icon,
+.logo-contact-animated.animation-done .final-logo-contact .logo-text {
+  position: static;
+  width: auto;
+  height: auto;
+}
+
+/* Mobil 768px: veličina kao ostale stranice (65px / 25px) */
+@media (max-width: 768px) {
+  .logo-contact-animated {
+    height: auto;
+    min-height: 0;
+  }
+
+  .envelope-contact {
+    font-size: 50px;
+  }
+
+  .logo-in-envelope-contact {
+    left: 13px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .final-logo-contact {
+    min-height: 65px;
+  }
+
+  .final-logo-contact .logo-icon {
+    width: 65px;
+    height: 65px;
+    min-width: 65px;
+    min-height: 65px;
+  }
+
+  .final-logo-contact .logo-text {
+    height: 25px;
+    min-height: 25px;
+  }
+
+  .logo-contact-animated.animation-done .final-logo-contact {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+}
+
+/* Mobil 480px: još manji logo (50px / 20px) */
+@media (max-width: 480px) {
+  .final-logo-contact {
+    min-height: 50px;
+  }
+
+  .final-logo-contact .logo-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+  }
+
+  .final-logo-contact .logo-text {
+    height: 20px;
+    min-height: 20px;
+  }
+}
+
+/* Awards Animation - Glow effect like medals */
+.logo-awards-animated {
+  position: relative;
+  overflow: visible;
+}
+
+.logo-awards-animated::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(188, 139, 11, 0.3) 0%, transparent 70%);
+  animation: logoAwardsGlow 2.5s ease-out 0.5s forwards;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.logo-awards-animated .logo-icon {
+  animation: logoAwardsAppear 2.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+  opacity: 0;
+  transform-origin: center center;
+  filter: drop-shadow(0 0 0px rgba(188, 139, 11, 0));
+}
+
+.logo-awards-animated .logo-text {
+  animation: logoTextAwardsAppear 2.5s ease-out 0.5s forwards;
+  opacity: 0;
+  transform-origin: left center;
+}
+
+@keyframes logoAwardsGlow {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  50% {
+    width: 180px;
+    height: 180px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 220px;
+    height: 220px;
+    opacity: 0;
+  }
+}
+
+@keyframes logoAwardsAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translateY(10px);
+    filter: drop-shadow(0 0 0px rgba(188, 139, 11, 0));
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(0);
+    filter: drop-shadow(0 0 12px rgba(188, 139, 11, 0.5));
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 0 8px rgba(188, 139, 11, 0.3));
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 0 0px rgba(188, 139, 11, 0));
+  }
+}
+
+@keyframes logoTextAwardsAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  60% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  85% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo-awards-animated.animation-done .logo-icon,
+.logo-awards-animated.animation-done .logo-text {
+  animation: none;
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.logo-awards-animated.animation-done::before {
+  display: none;
+}

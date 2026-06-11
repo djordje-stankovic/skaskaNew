@@ -1,0 +1,22 @@
+{
+  "name": "Skaska Brandy",
+  "short_name": "Skaska",
+  "description": "Premium Serbian plum brandy from Sumadija",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/logo/s-logo-gold.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/logo/s-logo-gold.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

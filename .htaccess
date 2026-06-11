@@ -1,0 +1,61 @@
+
+RewriteOptions inherit
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^skaskabrandy\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.skaskabrandy\.com$
+RewriteRule ^skaska\/$ "https\:\/\/skaskabrandy\.com\/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^.*$
+RewriteRule ^destilerija\/$ "https\:\/\/skaskabrandy\.com\/distillery\.html" [R=301,L]
+ErrorDocument 404 /404.html
+RewriteCond %{HTTP_HOST} ^.*$
+RewriteRule ^press\/\ \ $ "https\:\/\/skaskabrandy\.com\/news\.html\ " [R=301,L]
+RewriteCond %{HTTP_HOST} ^skaskabrandy\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.skaskabrandy\.com$
+RewriteRule ^press\/$ "https\:\/\/skaskabrandy\.com\/news\.html" [R=301,L]
+RewriteCond %{HTTP_HOST} ^skaskabrandy\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.skaskabrandy\.com$
+RewriteRule ^kontakt\/$ "https\:\/\/skaskabrandy\.com\/contact\.html" [R=301,L]
+RewriteCond %{HTTP_HOST} ^skaskabrandy\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.skaskabrandy\.com$
+RewriteRule ^commitment\/\ $ "https\:\/\/skaskabrandy\.com\/commitment\.html" [R=301,L]
+RewriteCond %{HTTP_HOST} ^skaskabrandy\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.skaskabrandy\.com$
+RewriteRule ^distillery\/$ "https\:\/\/skaskabrandy\.com\/distillery\.html" [R=301,L]
+RewriteCond %{HTTP_HOST} ^skaskabrandy\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.skaskabrandy\.com$
+RewriteRule ^commitment\/$ "https\:\/\/skaskabrandy\.com\/commitment\.html" [R=301,L]
+RewriteCond %{HTTP_HOST} ^skaskabrandy\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.skaskabrandy\.com$
+RewriteRule ^destilerija\/$ "https\:\/\/skaskabrandy\.com\/sr\/distillery\.html" [R=301,L]
+RewriteCond %{HTTP_HOST} ^skaskabrandy\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.skaskabrandy\.com$
+RewriteRule ^galerija\/$ "https\:\/\/skaskabrandy\.com\/sr\/gallery\.html" [R=301,L]
+RewriteCond %{HTTP_HOST} ^skaskabrandy\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.skaskabrandy\.com$
+RewriteRule ^vesti\/\ $ "https\:\/\/skaskabrandy\.com\/sr\/news\.html" [R=301,L]
+RewriteCond %{HTTP_HOST} ^skaskabrandy\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.skaskabrandy\.com$
+RewriteRule ^posvecenost\/$ "https\:\/\/skaskabrandy\.com\/sr\/commitment\.html" [R=301,L]
+RewriteCond %{HTTP_HOST} ^skaskabrandy\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.skaskabrandy\.com$
+RewriteRule ^gallery\/\ $ "https\:\/\/skaskabrandy\.com\/gallery\.html\ " [R=301,L]
+RewriteCond %{HTTP_HOST} ^skaskabrandy\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.skaskabrandy\.com$
+RewriteRule ^gallery\/$ "https\:\/\/skaskabrandy\.com\/gallery\.html" [R=301,L]
+RewriteCond %{HTTP_HOST} ^skaskabrandy\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.skaskabrandy\.com$
+RewriteRule ^kontakt\/$ "https\:\/\/skaskabrandy\.com\/sr\/contact\.html" [R=301,L]
+RewriteCond %{HTTP_HOST} ^skaskabrandy\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.skaskabrandy\.com$
+RewriteRule ^posvecenos\ $ "https\:\/\/skaskabrandy\.com\/sr\/commitment\.html" [R=301,L]
+RewriteCond %{HTTP_HOST} ^skaskabrandy\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.skaskabrandy\.com$
+RewriteRule ^commitment\ $ "https\:\/\/skaskabrandy\.com\/commitment\.html" [R=301,L]
+RewriteCond %{HTTP_HOST} ^skaskabrandy\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.skaskabrandy\.com$
+RewriteRule ^contact\/$ "https\:\/\/skaskabrandy\.com\/contact\.html" [R=301,L]
+RewriteCond %{HTTP_HOST} ^skaskabrandy\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.skaskabrandy\.com$
+RewriteRule ^sr\/where\-to\-buy\.html$ "https\:\/\/skaskabrandy\.com\/where\-to\-buy\.html" [R=302,L]
+
