@@ -432,20 +432,12 @@ section.gallery-section .container {
   margin-right: auto !important;
 }
 
-/* Contact: header uvek isti kao ostale stranice (padding i visina) – animacija ne menja header */
-body[data-page="contact"] .header {
-  padding: 30px 40px;
-  min-height: auto;
-}
-body[data-page="contact"] .header.scrolled {
-  padding: 20px 40px;
-}
+/* Contact: koristi isti header scroll efekat kao ostale strane (redesign) – bez posebnih padding override-a */
 .header .logo.logo-contact-animated {
   width: auto !important;
   max-width: none !important;
   flex-shrink: 0 !important;
   margin-right: auto !important;
-  margin-left: -20px; /* logo + Skaska više ulevo na Contact */
 }
 
 .header .lang-toggle {
@@ -673,6 +665,10 @@ body[data-page="contact"] .header.scrolled {
 .header.scrolled .logo-contact-animated {
   height: auto;
   min-height: 0;
+}
+/* Skrol: kontejner finalnog loga se skupi sa ostalim (inače min-height:100px drži header velikim) */
+.header.scrolled .final-logo-contact {
+  min-height: 80px;
 }
 .header.scrolled .final-logo-contact .logo-icon {
   height: 80px;
@@ -2806,6 +2802,9 @@ section.section-transparent:has(.stores-grid) {
   .header.scrolled .final-logo-where .logo-text {
     height: 20px;
   }
+  .header.scrolled .final-logo-contact {
+    min-height: 50px;
+  }
   .header.scrolled .final-logo-contact .logo-icon {
     height: 50px;
     width: 50px;
@@ -3080,6 +3079,9 @@ section.section-transparent:has(.stores-grid) {
   }
   .header.scrolled .final-logo-where .logo-text {
     height: 16px;
+  }
+  .header.scrolled .final-logo-contact {
+    min-height: 40px;
   }
   .header.scrolled .final-logo-contact .logo-icon {
     height: 40px;
@@ -4021,9 +4023,9 @@ body[data-page="commitment"] #why {
 /* Simple Gallery Grid */
 .gallery-grid-simple {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  max-width: 1200px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 

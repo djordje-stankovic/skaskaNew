@@ -11,7 +11,9 @@
     </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pronađi Skasku Premium Rakiju - Pronađite našu premium srpsku šljivovicu u prodavnicama, restoranima i online.">
+  <meta name="description" content="Pronađi Skasku Premium Rakiju - Pronađite našu premium srpsku šljivovicu u prodavnicama i online. Kupite na Rakija House, Supernova Wine, The Box Shop ili Etiketa.">
+  <meta name="keywords" content="kupi Skaska rakiju, srpska rakija online, Skaska prodavnice, Rakija House, Supernova Wine, premium rakija Srbija">
+  <meta name="author" content="Skaska Destilerija">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="language" content="sr">
   <link rel="canonical" href="https://skaskabrandy.com/sr/where-to-buy.html">
@@ -19,11 +21,11 @@
   <link rel="alternate" hreflang="sr" href="https://skaskabrandy.com/sr/where-to-buy.html">
   <link rel="alternate" hreflang="x-default" href="https://skaskabrandy.com/where-to-buy.html">
 
-  <!-- Open Graph / Facebook / Viber -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://skaskabrandy.com/sr/where-to-buy.html">
-  <meta property="og:title" content="Pronađi Skasku - Skaska | Čarolija pitome Šumadije">
-  <meta property="og:description" content="Kupite Skaska online na TopDrinks.rs, Vinoteka.rs ili pronađite prodavnice u vašem gradu na interaktivnoj mapi.">
+  <meta property="og:title" content="Pronađi Skasku - Skaska rakija">
+  <meta property="og:description" content="Kupite Skaska online na Rakija House, Supernova Wine ili pronađite prodavnice u vašem gradu na interaktivnoj mapi.">
   <meta property="og:image" content="https://skaskabrandy.com/images/product/VAL041291.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -33,11 +35,13 @@
   <meta property="og:site_name" content="Skaska Rakija">
   <meta property="og:updated_time" content="2025-01-30T12:00:00+01:00">
 
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Pronađi Skasku - Skaska | Čarolija pitome Šumadije">
-  <meta name="twitter:description" content="Kupite Skaska online ili pronađite prodavnice na mapi.">
+  <meta name="twitter:title" content="Pronađi Skasku - Skaska rakija">
+  <meta name="twitter:description" content="Kupite Skaska online na Rakija House, Supernova Wine ili pronađite prodavnice na mapi.">
   <meta name="twitter:image" content="https://skaskabrandy.com/images/product/VAL041291.jpg">
-  <title>Pronađi Skasku - Skaska</title>
+
+  <title data-i18n="where-page-title">Pronađi Skasku - Skaska</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="../images/logo/s-logo-gold.png">
@@ -55,17 +59,46 @@
   <!-- Styles -->
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/logo-animations.css">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 </head>
-<body>
+<body data-page="where-to-buy">
   <!-- Instant age check - prevents modal flash -->
   <script>
     if(localStorage.getItem('skaska-age-verified')==='true'){
       document.body.classList.add('age-verified');
     }
   </script>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link">Pređi na glavni sadržaj</a>
+  <!-- Age Verification Modal -->
+  <div class="age-modal" id="ageModal" role="dialog" aria-modal="true" aria-label="Provera punoletstva">
+    <div class="age-modal-content">
+      <div class="age-modal-main">
+        <div class="age-modal-logo-wrapper">
+          <div class="age-modal-logo-text">
+            <img src="../images/logo/Skaska-vratnice.png" alt="Skaska" class="age-modal-logo-graphic">
+          </div>
+        </div>
+        <p class="age-modal-text" data-i18n="age-text">Morate biti punoletni za kupovinu da biste ušli na ovaj sajt.</p>
+        <div class="age-modal-buttons">
+          <div class="age-modal-btn yes" id="ageYes" data-i18n="age-yes">da</div>
+          <div class="age-modal-btn no" id="ageNo" data-i18n="age-no">ne</div>
+        </div>
+        <p class="age-modal-disclaimer" data-i18n="age-disclaimer">
+          Pritiskom na „DA" i ulaskom na ovaj sajt prihvatam Uslove korišćenja i Politiku privatnosti.
+        </p>
+      </div>
+      <div class="age-modal-denied">
+        <div class="age-modal-denied-icon">🚫</div>
+        <h3 data-i18n="age-denied-title">Pristup odbijen</h3>
+        <p data-i18n="age-denied-text">Morate biti punoletni da biste ušli na ovaj sajt.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- Preloader -->
   <div class="preloader">
+    <img src="../images/logo/s-logo-gold.png" alt="Skaska" class="preloader-logo">
     <span class="preloader-counter">0</span>
   </div>
 
@@ -94,7 +127,7 @@
       <a href="where-to-buy.html" class="active">SR</a>
     </div>
 
-    <div class="menu-toggle" role="button" aria-label="Toggle navigation menu" aria-expanded="false" tabindex="0">
+    <div class="menu-toggle" role="button" aria-label="Otvori/zatvori meni" aria-expanded="false" tabindex="0">
       <span></span>
       <span></span>
       <span></span>
@@ -104,14 +137,14 @@
   <!-- Navigation Overlay -->
   <nav class="nav-overlay">
     <ul class="nav-menu">
-      <li><a href="index.html">Skaska</a></li>
-      <li><a href="Tale_of_Plum.html">Bajka o šljivi</a></li>
-      <li><a href="commitment.html">Posvećenost</a></li>
-      <li><a href="distillery.html">Destilerija</a></li>
-      <li><a href="gallery.html">Galerija</a></li>
-      <li><a href="news.html">Vesti</a></li>
-      <li><a href="where-to-buy.html" class="active" aria-current="page">Pronađi Skasku</a></li>
-      <li><a href="contact.html">Kontakt</a></li>
+      <li><a href="index.html" data-i18n="nav-home">Skaska</a></li>
+      <li><a href="Tale_of_Plum.html" data-i18n="nav-about">Bajka o šljivi</a></li>
+      <li><a href="commitment.html" data-i18n="nav-commitment">Posvećenost</a></li>
+      <li><a href="distillery.html" data-i18n="nav-distillery">Destilerija</a></li>
+      <li><a href="gallery.html" data-i18n="nav-gallery">Galerija</a></li>
+      <li><a href="news.html" data-i18n="nav-news">Vesti</a></li>
+      <li><a href="where-to-buy.html" class="active" aria-current="page" data-i18n="nav-where">Pronađi Skasku</a></li>
+      <li><a href="contact.html" data-i18n="nav-contact">Kontakt</a></li>
     </ul>
   </nav>
 
@@ -122,135 +155,205 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1 class="hero-title">Pronađi Skasku</h1>
+      <h1 class="hero-title" data-i18n="where-to-buy-hero-title">Pronađi Skasku</h1>
     </div>
 
     <div class="scroll-indicator">
-      <span>Skroluj</span>
+      <span data-i18n="scroll">Skroluj</span>
       <div class="scroll-line"></div>
     </div>
   </section>
 
-  <!-- Stores Section -->
+  <!-- Main Content Section -->
   <section class="section section-transparent">
     <div class="section-overlay" style="background: rgba(0,0,0,0.15);"></div>
 
     <div class="section-content container">
-      <div class="col-text animate-on-scroll" style="max-width: 800px; margin: 0 auto 50px; text-align: center;">
+      <!-- Buy Options -->
+      <div class="col-text animate-on-scroll" style="max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 100;">
         <p class="buy-section-title" data-i18n="where-buy-title">Skaska vas čeka na pažljivo odabranim mestima.<br>Kupite online ili posetite najbližu vinoteku.</p>
-      </div>
 
-      <!-- Partnerske prodavnice Section -->
-      <div class="col-text animate-on-scroll" style="max-width: 800px; margin: 0 auto 50px; text-align: center;">
-        <h2 style="text-align: center; margin-bottom: 10px;">Gde kupiti Skasku</h2>
-        <p style="text-align: center; max-width: 600px; margin: 0 auto; color: #FFFFFF;">
-          Posetite naše partnere i odaberite vašu Skasku lično.
-        </p>
-      </div>
+        <div class="buy-options">
+          <!-- Buy Online Dropdown -->
+          <div class="buy-option-wrapper">
+            <button class="buy-option-btn">
+              <span data-i18n="where-buy-online">Kupi online</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
 
-      <!-- Filter Buttons -->
-      <div class="filter-section animate-on-scroll">
-        <button class="filter-btn active" data-filter="all">Sve Lokacije</button>
-        <button class="filter-btn" data-filter="store">Prodavnice</button>
-        <button class="filter-btn" data-filter="restaurant">Restorani</button>
-        <button class="filter-btn" data-filter="online">Online</button>
-        <button class="filter-btn" data-filter="novi-sad">Novi Sad</button>
-        <button class="filter-btn" data-filter="belgrade">Beograd</button>
-        <button class="filter-btn" data-filter="sumadija">Šumadija</button>
-      </div>
+            <div class="online-dropdown">
+              <a href="https://rakijahouse.rs/product/skaska-rakija-od-sljive/" target="_blank" rel="noopener noreferrer" class="online-store-item">
+                <img src="https://rakijahouse.rs/wp-content/uploads/2025/04/Logo-1.svg" alt="Rakija House" class="store-logo" onerror="this.style.display='none'">
+                <div class="store-info">
+                  <h4>Rakija House</h4>
+                  <span data-i18n="where-rakija-address">2 lokacije</span>
+                </div>
+                <svg class="store-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
 
-      <!-- Stores Grid -->
-      <div class="stores-grid" id="storesGrid">
-        <!-- Store 1 -->
-        <div class="store-card animate-on-scroll" data-type="store" data-city="novi-sad" data-lat="45.2569729" data-lng="19.8420011" data-address="Njegoševa 15, Novi Sad">
-          <h3>Rakija House</h3>
-          <p><strong>Tip:</strong> Premium prodavnica alkoholnih pića</p>
-          <p><strong>Adresa:</strong> 2 lokacije</p>
-          <p><strong>Telefon:</strong> <a href="tel:+381659505568">+381 65 950 55 68</a></p>
-          <a href="https://www.google.com/maps/place/Rakija+House/@45.2569729,19.8420011,19z" target="_blank">Pogledaj na mapi →</a>
-        </div>
+              <a href="https://www.prodavnica.vino.rs/skaska-rakija-od-sljive.html" target="_blank" rel="noopener noreferrer" class="online-store-item">
+                <img src="https://www.prodavnica.vino.rs/media/logo/stores/1/logo_2.png" alt="Supernova Wine" class="store-logo" onerror="this.style.display='none'">
+                <div class="store-info">
+                  <h4>Supernova Wine</h4>
+                  <span>Beograd</span>
+                </div>
+                <svg class="store-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
 
-        <!-- Store 2 -->
-        <div class="store-card animate-on-scroll" data-type="store" data-city="novi-sad" data-lat="45.264123" data-lng="19.836789" data-address="Zmaj Jovina 15, Novi Sad">
-          <h3>Tamaras Trade</h3>
-          <p><strong>Tip:</strong> Vinoteka i Prodavnica Alkohola</p>
-          <p><strong>Adresa:</strong> Zmaj Jovina 15<br>21000 Novi Sad, Srbija</p>
-          <p><strong>Telefon:</strong> <a href="tel:+38121234567">+381 21 234 567</a></p>
-          <p><strong>Radno vreme:</strong> Pon-Pet: 10:00-19:00, Sub: 10:00-16:00</p>
-          <a href="https://www.google.com/maps/search/?api=1&query=Zmaj+Jovina+15,+Novi+Sad" target="_blank">Pogledaj na mapi →</a>
-        </div>
-
-        <!-- Restaurant 1 -->
-        <div class="store-card animate-on-scroll" data-type="restaurant" data-city="belgrade" data-lat="44.786568" data-lng="20.448922" data-address="Knez Mihailova 15, Belgrade">
-          <h3>Restoran Dva Jelena</h3>
-          <p><strong>Tip:</strong> Tradicionalni Srpski Restoran</p>
-          <p><strong>Adresa:</strong> Knez Mihailova 15<br>11000 Beograd, Srbija</p>
-          <p><strong>Telefon:</strong> <a href="tel:+38111234567">+381 11 234 567</a></p>
-          <p><strong>Radno vreme:</strong> Svakodnevno: 12:00-24:00</p>
-          <a href="https://www.google.com/maps/search/?api=1&query=Knez+Mihailova+15,+Belgrade" target="_blank">Pogledaj na mapi →</a>
-        </div>
-
-        <!-- Restaurant 2 -->
-        <div class="store-card animate-on-scroll" data-type="restaurant" data-city="belgrade" data-lat="44.815403" data-lng="20.460641" data-address="Skadarska 25, Belgrade">
-          <h3>Restoran Skadarlija</h3>
-          <p><strong>Tip:</strong> Tradicionalni Restoran</p>
-          <p><strong>Adresa:</strong> Skadarska 25<br>11000 Beograd, Srbija</p>
-          <p><strong>Telefon:</strong> <a href="tel:+38111234568">+381 11 234 568</a></p>
-          <p><strong>Radno vreme:</strong> Svakodnevno: 11:00-01:00</p>
-          <a href="https://www.google.com/maps/search/?api=1&query=Skadarska+25,+Belgrade" target="_blank">Pogledaj na mapi →</a>
-        </div>
-
-        <!-- Store 3 -->
-        <div class="store-card animate-on-scroll" data-type="store" data-city="sumadija" data-lat="44.0398295" data-lng="20.6819537" data-address="Bare, Šumadija">
-          <h3>Skaska Destilerija Shop</h3>
-          <p><strong>Tip:</strong> Direktno iz Destilerije</p>
-          <p><strong>Adresa:</strong> Bare<br>Šumadija, Srbija</p>
-          <p><strong>Telefon:</strong> <a href="tel:+381653405050">+381 65 340 50 50</a></p>
-          <p><strong>Radno vreme:</strong> Po dogovoru</p>
-          <a href="https://www.google.com/maps/place/Skaska+Estate/@44.036234,20.6616567,14z/data=!4m15!1m8!3m7!1s0x47573c525a40b377:0xb7d482e60fee39d0!2sBare!3b1!8m2!3d44.0462097!4d20.6879309!16s%2Fm%2F0h670x8!3m5!1s0x47573d98f1ee2561:0xafe3a9892a2e4bcf!8m2!3d44.0398295!4d20.6819537!16s%2Fg%2F11k1mdnjn9?entry=ttu" target="_blank">Pogledaj na mapi →</a>
-        </div>
-
-        <!-- Store 4 -->
-        <div class="store-card animate-on-scroll" data-type="store" data-city="belgrade" data-lat="44.812826" data-lng="20.461228" data-address="Terazije 27, Belgrade">
-          <h3>Vinoteka Beograd</h3>
-          <p><strong>Tip:</strong> Premium Vinoteka i Alkohol</p>
-          <p><strong>Adresa:</strong> Terazije 27<br>11000 Beograd, Srbija</p>
-          <p><strong>Telefon:</strong> <a href="tel:+38111234569">+381 11 234 569</a></p>
-          <p><strong>Radno vreme:</strong> Pon-Sub: 9:00-21:00</p>
-          <a href="https://www.google.com/maps/search/?api=1&query=Terazije+27,+Belgrade" target="_blank">Pogledaj na mapi →</a>
-        </div>
-      </div>
-
-      <!-- Map Container -->
-      <div class="map-container animate-on-scroll" id="mapContainer">
-        <iframe
-          id="storeMap"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.1234567890123!2d19.833549!3d45.267136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDE2JzAxLjciTiAxOcKwNTAnMDAuOCJF!5e0!3m2!1ssr!2srs!4v1234567890123!5m2!1ssr!2srs"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-
-      <!-- Online Shop Section -->
-      <div class="online-shop-section animate-on-scroll">
-        <h2 style="text-align: center; margin-bottom: 20px;">Online Kupovina</h2>
-        <p style="text-align: center; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
-          Kupite Skaska Rakiju online i neka vam stigne na vašu adresu.
-        </p>
-        <div class="online-shop-grid">
-          <div class="store-card">
-            <h3>Skaska Zvanični Shop</h3>
-            <p><strong>Website:</strong> <a href="https://www.skaskabrandy.com/shop" target="_blank">www.skaskabrandy.com/shop</a></p>
-            <p><strong>Dostava:</strong> Srbija & Inostranstvo</p>
-            <p><strong>Plaćanje:</strong> Kreditna Kartica, Bankovni Transfer</p>
+              <a href="https://theboxshop.rs/proizvod/rakija-skaska-sljiva-075l/" target="_blank" rel="noopener noreferrer" class="online-store-item">
+                <img src="https://theboxshop.rs/wp-content/uploads/2023/09/box-shop-logo-black.png" alt="The Box Shop" class="store-logo">
+                <div class="store-info">
+                  <h4>The Box Shop</h4>
+                  <span data-i18n="where-box-address">4 lokacije</span>
+                </div>
+                <svg class="store-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+            </div>
           </div>
-          <div class="store-card">
-            <h3>Premium Spirits Online</h3>
-            <p><strong>Website:</strong> <a href="#" target="_blank">www.premiumspirits.rs</a></p>
-            <p><strong>Dostava:</strong> Srbija</p>
-            <p><strong>Plaćanje:</strong> Kreditna Kartica, Pouzećem</p>
+
+          <!-- Visit Store Button -->
+          <a href="#stores" class="buy-option-btn" style="text-decoration: none;">
+            <span data-i18n="where-visit-store">Poseti prodavnicu</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Physical Stores Section -->
+      <div class="stores-section animate-on-scroll" id="stores">
+        <h2 style="text-align: center; margin-bottom: 10px;" data-i18n="where-stores-title">Gde kupiti Skasku</h2>
+        <p style="text-align: center; max-width: 600px; margin: 0 auto; color: #FFFFFF;" data-i18n="where-stores-desc">
+          Posetite naše partnere i odaberite vašu bocu Skaske lično.
+        </p>
+
+        <div class="stores-grid">
+          <!-- Store 1 - Rakija House (2 lokacije) -->
+          <div class="store-card" data-name="Rakija House" data-multiple-locations="true">
+            <h3><a href="https://www.google.com/maps/search/?api=1&query=Rakija+House+Novi+Sad" target="_blank" rel="noopener noreferrer" class="store-name-link">Rakija House</a></h3>
+            <div class="store-detail">
+              <strong data-i18n="where-type">Tip:</strong>
+              <span data-i18n="where-type-spirits">Premium prodavnica pića</span>
+            </div>
+            <div class="store-detail">
+              <strong data-i18n="where-address">Adresa:</strong>
+              <span data-i18n="where-rakija-address">2 lokacije</span>
+            </div>
+            <div class="store-detail">
+              <strong data-i18n="where-phone">Telefon:</strong>
+              <span><a href="tel:+381659505568" style="color: inherit;">+381 65 950 55 68</a></span>
+            </div>
+            <div class="store-detail">
+              <strong>Email:</strong>
+              <span><a href="mailto:rakijahouse2023@gmail.com" style="color: inherit;">rakijahouse2023@gmail.com</a></span>
+            </div>
+            <a href="#" class="map-link" onclick="showRakijaHouseLocations(); return false;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span data-i18n="where-show-map">Pogledaj na mapi</span>
+            </a>
           </div>
+
+          <!-- Store 2 - Supernova Wine (Vino.rs) -->
+          <div class="store-card" data-lat="44.8221503" data-lng="20.4838798" data-name="Supernova Wine">
+            <h3><a href="https://www.google.com/maps/dir/?api=1&destination=44.8221503,20.4838798" target="_blank" rel="noopener noreferrer" class="store-name-link">Supernova Wine</a></h3>
+            <div class="store-detail">
+              <strong data-i18n="where-type">Tip:</strong>
+              <span data-i18n="where-type-wine">Vinoteka i prodavnica pića</span>
+            </div>
+            <div class="store-detail">
+              <strong data-i18n="where-address">Adresa:</strong>
+              <span>Dunavska 57, 11000 Beograd</span>
+            </div>
+            <div class="store-detail">
+              <strong data-i18n="where-phone">Telefon:</strong>
+              <span><a href="tel:+381648104222" style="color: inherit;">+381 64 810 42 22</a></span>
+            </div>
+            <div class="store-detail">
+              <strong>Email:</strong>
+              <span><a href="mailto:vinoteka@supernovawine.rs" style="color: inherit;">vinoteka@supernovawine.rs</a></span>
+            </div>
+            <a href="#" class="map-link" onclick="zoomToStore(44.8221503, 20.4838798, 'Supernova Wine, Dunavska 57, Beograd'); return false;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span data-i18n="where-show-map">Pogledaj na mapi</span>
+            </a>
+          </div>
+
+          <!-- Store 3 - The Box Shop (3 lokacije) -->
+          <div class="store-card" data-name="The Box Shop" data-multiple-locations="true">
+            <h3><a href="https://www.google.com/maps/search/?api=1&query=The+Box+Shop+Novi+Sad" target="_blank" rel="noopener noreferrer" class="store-name-link">The Box Shop</a></h3>
+            <div class="store-detail">
+              <strong data-i18n="where-type">Tip:</strong>
+              <span data-i18n="where-type-spirits">Premium prodavnica pića</span>
+            </div>
+            <div class="store-detail">
+              <strong data-i18n="where-address">Adresa:</strong>
+              <span data-i18n="where-box-address">4 lokacije</span>
+            </div>
+            <div class="store-detail">
+              <strong data-i18n="where-phone">Telefon:</strong>
+              <span><a href="tel:+381213026117" style="color: inherit;">+381 21 302 61 17</a></span>
+            </div>
+            <div class="store-detail">
+              <strong>Email:</strong>
+              <span><a href="mailto:office@theboxshop.rs" style="color: inherit;">office@theboxshop.rs</a></span>
+            </div>
+            <a href="#" class="map-link" onclick="showBoxShopLocations(); return false;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span data-i18n="where-show-map">Pogledaj na mapi</span>
+            </a>
+          </div>
+
+          <!-- Store 4 - Etiketa Wine & Spirits -->
+          <div class="store-card" data-lat="44.0143" data-lng="20.9164" data-name="Etiketa Wine & Spirits">
+            <h3><a href="https://www.google.com/maps/dir/?api=1&destination=44.0143,20.9164" target="_blank" rel="noopener noreferrer" class="store-name-link">Etiketa Wine & Spirits</a></h3>
+            <div class="store-detail">
+              <strong data-i18n="where-type">Tip:</strong>
+              <span data-i18n="where-type-wine">Vinoteka i prodavnica pića</span>
+            </div>
+            <div class="store-detail">
+              <strong data-i18n="where-address">Adresa:</strong>
+              <span>Branka Radičevića 6b, 34000 Kragujevac</span>
+            </div>
+            <div class="store-detail">
+              <strong data-i18n="where-phone">Telefon:</strong>
+              <span><a href="tel:+381628527674" style="color: inherit;">+381 62 85 27 674</a></span>
+            </div>
+            <div class="store-detail">
+              <strong>Email:</strong>
+              <span><a href="mailto:office@etiketavinoteka.rs" style="color: inherit;">office@etiketavinoteka.rs</a></span>
+            </div>
+            <a href="#" class="map-link" onclick="zoomToStore(44.0143, 20.9164, 'Etiketa Wine & Spirits, Branka Radičevića 6b, Kragujevac'); return false;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span data-i18n="where-show-map">Pogledaj na mapi</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Map Container -->
+        <div class="map-container animate-on-scroll">
+          <div id="storeMap" style="width: 100%; height: 100%;"></div>
         </div>
       </div>
 
@@ -259,12 +362,13 @@
         <p style="max-width: 600px; margin: 0 auto 30px; color: #FFFFFF;" data-i18n="where-partner-desc">
           Za distribuciju i saradnju, kontaktirajte nas direktno.
         </p>
-        <a href="contact.html" class="btn" data-i18n="where-partner-btn">Kontaktirajte Nas</a>
+        <a href="contact.html" class="btn" data-i18n="where-partner-btn">Kontaktirajte nas</a>
       </div>
     </div>
   </section>
 
   </main>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer-container">
@@ -327,32 +431,6 @@
     </div>
   </footer>
 
-  <!-- Age Verification Modal -->
-  <div class="age-modal" id="ageModal" role="dialog" aria-modal="true" aria-label="Age verification">
-    <div class="age-modal-content">
-      <div class="age-modal-main">
-        <div class="age-modal-logo-wrapper">
-          <div class="age-modal-logo-text">
-            <img src="../images/logo/Skaska-vratnice.png" alt="Skaska" class="age-modal-logo-graphic">
-          </div>
-        </div>
-        <p class="age-modal-text">You must be of legal purchase age to enter this website.</p>
-        <div class="age-modal-buttons">
-          <div class="age-modal-btn yes" id="ageYes">da</div>
-          <div class="age-modal-btn no" id="ageNo">ne</div>
-        </div>
-        <p class="age-modal-disclaimer">
-          By pressing "YES" and entering this site I agree to the Terms & Conditions and Privacy Policy.
-        </p>
-      </div>
-      <div class="age-modal-denied">
-        <div class="age-modal-denied-icon">🚫</div>
-        <h3>Access Denied</h3>
-        <p>You must be of legal drinking age to enter this website.</p>
-      </div>
-    </div>
-  </div>
-
   <!-- Medal Modal -->
   <div class="medal-modal" id="medalModal">
     <div class="medal-modal-content">
@@ -362,71 +440,287 @@
   </div>
 
   <script src="../js/main.js" defer></script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script>
-    // Store filtering and map functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const filterBtns = document.querySelectorAll('.filter-btn');
-      const storeCards = document.querySelectorAll('.store-card');
-      const mapContainer = document.getElementById('storeMap');
-      
-      // Filter functionality
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-          const filter = this.dataset.filter;
-          
-          // Update active button
-          filterBtns.forEach(b => b.classList.remove('active'));
-          this.classList.add('active');
-          
-          // Filter cards
-          storeCards.forEach(card => {
-            if (filter === 'all') {
-              card.style.display = 'block';
-            } else if (filter === 'online') {
-              card.style.display = card.closest('.online-shop-section') ? 'block' : 'none';
-            } else {
-              const cardType = card.dataset.type;
-              const cardCity = card.dataset.city;
-              
-              if (filter === cardType || filter === cardCity) {
-                card.style.display = 'block';
-              } else {
-                card.style.display = 'none';
-              }
-            }
-          });
-        });
+    // Store locations
+    const stores = [
+      {
+        name: 'Rakija House',
+        lat: 45.2569729,
+        lng: 19.8420011,
+        address: 'Njegoševa 15, 21000 Novi Sad',
+        phone: '+381 65 950 55 68'
+      },
+      {
+        name: 'Rakija House',
+        lat: 45.2496879,
+        lng: 19.833283,
+        address: 'Futoška 21, Novi Sad 21000',
+        phone: '+381 65 950 55 68'
+      },
+      {
+        name: 'Supernova Wine',
+        lat: 44.8221503,
+        lng: 20.4838798,
+        address: 'Dunavska 57, 11000 Beograd',
+        phone: '+381 64 810 42 22'
+      },
+      {
+        name: 'The BOX shop',
+        lat: 45.2543613,
+        lng: 19.8428676,
+        address: 'Pozorišni trg 7, Novi Sad',
+        phone: '021/3013540',
+        hours: 'Radnim danom 9h-22h, subotom 9h-22h, nedeljom ne radimo'
+      },
+      {
+        name: 'The BOX - Wine & Gift shop',
+        lat: 45.254151,
+        lng: 19.8491239,
+        address: 'Bulevar Mihajla Pupina 13, Novi Sad',
+        phone: '021/3026117',
+        hours: 'Radnim danom 9h-22h, subotom 9h-22h, nedeljom 13h-21h'
+      },
+      {
+        name: 'Premium shop',
+        lat: 45.2567148,
+        lng: 19.8479109,
+        address: 'Zmaj Jovina 28, Novi Sad',
+        phone: '021/3027752',
+        hours: 'Radnim danom 9h-22h, subotom 9h-22h, nedeljom 13h-21h'
+      },
+      {
+        name: 'The BOX shop',
+        lat: 45.2573574,
+        lng: 19.8335557,
+        address: 'Bulevar oslobođenja 50, Novi Sad',
+        phone: '',
+        hours: ''
+      },
+      {
+        name: 'Etiketa Wine & Spirits',
+        lat: 44.0143,
+        lng: 20.9164,
+        address: 'Branka Radičevića 6b, 34000 Kragujevac',
+        phone: '+381 62 85 27 674'
+      }
+    ];
+
+    // Custom gold marker icon
+    const goldIcon = L.divIcon({
+      className: 'custom-marker',
+      html: `<svg width="32" height="42" viewBox="0 0 32 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 0C7.164 0 0 7.164 0 16c0 12 16 26 16 26s16-14 16-26c0-8.836-7.164-16-16-16z" fill="#BC8B0B"/>
+        <circle cx="16" cy="16" r="8" fill="#0a0a0a"/>
+        <text x="16" y="20" text-anchor="middle" fill="#BC8B0B" font-size="10" font-weight="bold">S</text>
+      </svg>`,
+      iconSize: [32, 42],
+      iconAnchor: [16, 42],
+      popupAnchor: [0, -42]
+    });
+
+    // Initialize map centered on Serbia (to show all stores)
+    const map = L.map('storeMap', {
+      center: [44.5, 20.0],
+      zoom: 8,
+      minZoom: 7, // Maksimalni zoom out - ne može se odzumirati više
+      maxZoom: 19
+    });
+
+    // Add CartoDB Dark Matter - tamna varijanta
+    const cartoLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19,
+      minZoom: 1
+    });
+
+    // Fallback tile layer ako CartoDB ne učita tile-ove
+    const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19,
+      minZoom: 1
+    });
+
+    // Dodaj CartoDB layer, a ako ne učita tile-ove, koristi OSM kao fallback
+    cartoLayer.addTo(map);
+
+    // Proveri da li se tile-ovi učitavaju, ako ne, prebaci na OSM
+    let tileErrorCount = 0;
+    cartoLayer.on('tileerror', function() {
+      tileErrorCount++;
+      // Ako ima više od 3 greške na visokim zoom nivoima, prebaci na OSM
+      if (tileErrorCount > 3 && map.getZoom() > 15) {
+        if (map.hasLayer(cartoLayer)) {
+          map.removeLayer(cartoLayer);
+          osmLayer.addTo(map);
+        }
+      }
+    });
+
+    // Resetuj error count kada se zoom promeni
+    map.on('zoomend', function() {
+      if (map.getZoom() <= 15) {
+        tileErrorCount = 0;
+      }
+    });
+
+    // Add markers (initially all visible)
+    const markers = stores.map(store => {
+      const marker = L.marker([store.lat, store.lng], { icon: goldIcon }).addTo(map);
+      const mapsDirUrl = `https://www.google.com/maps/dir/?api=1&destination=${store.lat},${store.lng}`;
+      let popupContent = `
+        <div style="text-align: center; min-width: 180px;">
+          <strong style="color: #BC8B0B; font-size: 14px;">${store.name}</strong><br>
+          <a href="${mapsDirUrl}" target="_blank" rel="noopener noreferrer" style="color: #BC8B0B; font-size: 12px; text-decoration: none;">${store.address}</a><br>`;
+      if (store.phone) {
+        popupContent += `<a href="tel:${store.phone}" style="color: #BC8B0B; font-size: 12px;">${store.phone}</a><br>`;
+      }
+      if (store.hours) {
+        popupContent += `<span style="font-size: 11px; color: #999; margin-top: 5px; display: block;">${store.hours}</span>`;
+      }
+      popupContent += `</div>`;
+      marker.bindPopup(popupContent);
+      return { marker, store };
+    });
+
+    // Function to show/hide markers
+    function showOnlyMarkers(storeNames) {
+      markers.forEach(({ marker, store }) => {
+        if (storeNames.includes(store.name)) {
+          marker.addTo(map);
+        } else {
+          map.removeLayer(marker);
+        }
+      });
+    }
+
+    // Function to show all markers
+    function showAllMarkers() {
+      markers.forEach(({ marker }) => {
+        marker.addTo(map);
+      });
+    }
+
+    // Zoom to store function
+    function zoomToStore(lat, lng, name) {
+      // Find the store by coordinates
+      const selectedStore = stores.find(s => s.lat === lat && s.lng === lng);
+
+      // Show only this marker
+      if (selectedStore) {
+        showOnlyMarkers([selectedStore.name]);
+      }
+
+      map.setView([lat, lng], 17, { animate: true });
+
+      // Open popup for this marker
+      markers.forEach(({ marker, store }) => {
+        if (store.lat === lat && store.lng === lng) {
+          setTimeout(() => marker.openPopup(), 300);
+        }
       });
 
-      // Map update on card click
-      storeCards.forEach((card, index) => {
-        if (card.dataset.lat && card.dataset.lng) {
-          card.addEventListener('click', function() {
-            // Remove active class from all cards
-            storeCards.forEach(c => c.classList.remove('active'));
-            // Add active class to clicked card
-            this.classList.add('active');
-            
-            // Update map
-            const lat = this.dataset.lat;
-            const lng = this.dataset.lng;
-            const address = encodeURIComponent(this.dataset.address);
-            
-            const mapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.1234567890123!2d${lng}!3d${lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDE2JzAxLjciTiAxOcKwNTAnMDAuOCJF!5e0!3m2!1ssr!2srs!4v1234567890123!5m2!1ssr!2srs&q=${address}`;
-            
-            mapContainer.src = mapUrl;
-            
-            // Scroll to map
-            document.getElementById('mapContainer').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          });
+      // Mark active card
+      document.querySelectorAll('.store-card').forEach(card => card.classList.remove('active'));
+      if (event && event.target) {
+        const card = event.target.closest('.store-card');
+        if (card) card.classList.add('active');
+      }
+
+      // Smooth scroll to map
+      document.querySelector('.map-container').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Store card click handler (skip when clicking store name link – it opens Google Maps)
+    document.querySelectorAll('.store-card').forEach(card => {
+      card.addEventListener('click', function(e) {
+        if (e.target.closest('.map-link')) return;
+        if (e.target.closest('.store-name-link')) return;
+        const lat = parseFloat(this.dataset.lat);
+        const lng = parseFloat(this.dataset.lng);
+        const name = this.dataset.name;
+        if (lat && lng) {
+          zoomToStore(lat, lng, name);
+        } else if (this.dataset.multipleLocations === 'true') {
+          if (this.dataset.name === 'Rakija House') {
+            showRakijaHouseLocations();
+          } else {
+            showBoxShopLocations();
+          }
         }
       });
     });
-    
-    // Mark logo animation as done
+
+    // Reset to show all markers when clicking on map or outside cards
+    map.on('click', function() {
+      showAllMarkers();
+      document.querySelectorAll('.store-card').forEach(card => card.classList.remove('active'));
+    });
+
+    // Show both Rakija House locations (fit bounds)
+    function showRakijaHouseLocations() {
+      const rakijaHouseStores = stores.filter(s => s.name === 'Rakija House');
+      if (rakijaHouseStores.length > 0) {
+        showOnlyMarkers(rakijaHouseStores.map(s => s.name));
+        const bounds = L.latLngBounds(rakijaHouseStores.map(s => [s.lat, s.lng]));
+        map.fitBounds(bounds, { padding: [50, 50] });
+        markers.forEach(({ marker, store }) => {
+          if (store.name === 'Rakija House') {
+            setTimeout(() => marker.openPopup(), 300);
+          }
+        });
+        document.querySelectorAll('.store-card').forEach(card => card.classList.remove('active'));
+        const rakijaCard = document.querySelector('[data-name="Rakija House"]');
+        if (rakijaCard) rakijaCard.classList.add('active');
+        document.querySelector('.map-container').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    // Show all Box Shop locations
+    function showBoxShopLocations() {
+      const boxShopStores = stores.filter(s =>
+        s.name.includes('BOX') || s.name.includes('Premium shop')
+      );
+
+      if (boxShopStores.length > 0) {
+        // Show only Box Shop markers
+        showOnlyMarkers(boxShopStores.map(s => s.name));
+
+        // Fit bounds to show all Box Shop locations
+        const bounds = L.latLngBounds(boxShopStores.map(s => [s.lat, s.lng]));
+        map.fitBounds(bounds, { padding: [50, 50] });
+
+        // Open all popups
+        markers.forEach(({ marker, store }) => {
+          if (boxShopStores.some(bs => bs.name === store.name)) {
+            setTimeout(() => marker.openPopup(), 300);
+          }
+        });
+
+        // Mark active card
+        document.querySelectorAll('.store-card').forEach(card => card.classList.remove('active'));
+        const boxShopCard = document.querySelector('[data-name="The Box Shop"]');
+        if (boxShopCard) boxShopCard.classList.add('active');
+
+        // Smooth scroll to map
+        document.querySelector('.map-container').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    // Show all markers button (fit bounds)
+    function showAllStores() {
+      const bounds = L.latLngBounds(stores.map(s => [s.lat, s.lng]));
+      map.fitBounds(bounds, { padding: [50, 50] });
+    }
+
+  </script>
+  <script>
     setTimeout(function() {
       var logo = document.querySelector('.logo-where-animated');
       if (logo) logo.classList.add('animation-done');
     }, 3500);
   </script>
 </body>
+</html>
