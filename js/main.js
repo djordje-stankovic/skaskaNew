@@ -59,12 +59,12 @@ function initAgeVerification() {
   modal.style.width = '100%';
   modal.style.height = '100%';
   modal.style.zIndex = '99999';
-  modal.style.background = 'rgba(10, 8, 5, 0.9)';
+  modal.style.background = 'rgba(228, 224, 216, 0.92)';
   modal.style.overflowY = 'auto';
 
   var content = modal.querySelector('.age-modal-content');
   if (content) {
-    content.style.background = '#F4EFE4';
+    content.style.background = '#ffffff';
     content.style.position = 'relative';
     content.style.maxWidth = '750px';
     content.style.width = '90%';
@@ -1010,17 +1010,6 @@ const translations = {
     'hero-title': 'Mellowdy of Bonhomie',
     'main-text': 'Once we wished to encapsulate the spirit and colors, the unmatched beauty of Shumadia in one special feature, we chose: MELLOWNESS. And as if these landscapes made an effort and did everything to parent people who absorbed that mellowness.',
     'main-text-2': 'Skaska is just a story about that unique trait being transformed into kindness and cordiality. Skaska is a tale of a plum, a symbol of welcome and hospitality.',
-    'spotlight-eyebrow': 'Skaska',
-    'spotlight-title': 'A tale poured into a glass',
-    'spotlight-text': 'Born in our orchards in Bare, double distilled in copper stills and patiently matured — until mellowness becomes a flavor. One village, one orchard, one tale.',
-    'spotlight-cta-find': 'Find Skaska',
-    'spotlight-cta-story': 'Tale of Plum',
-    'awards-strip-title': 'Awarded around the world',
-    'award-points': 'points',
-    'award-points-2': 'points',
-    'award-top5': 'finalist',
-    'award-silver': 'Silver',
-    'award-medal': 'medal',
     'footer-definition': 'Skaska (ref. Dictionary) – an oral story with elements of fantasy passed down from generation to generation',
 
     // === DISTILLERY PAGE ===
@@ -1398,17 +1387,6 @@ const translations = {
     'hero-title': 'Čarolija pitome Šumadije',
     'main-text': 'Kada smo poželeli da duh i kolorit, neuporedivu lepotu Šumadije svedemo na jednu posebnost, izabrali smo: PITOMOST. I kao da su se ovi predeli potrudili i učinili sve da iznedre ljude koji su tu pitomost i upili.',
     'main-text-2': 'Skaska je priča o toj jedinstvenoj osobini pretočenoj u dobrodušnost i srdačnost. Skaska je bajka o šljivi, simbolu dobrodošlice i gostoprimstva.',
-    'spotlight-eyebrow': 'Skaska',
-    'spotlight-title': 'Bajka pretočena u čašu',
-    'spotlight-text': 'Rođena u našim voćnjacima u Barama, dvostruko destilisana u bakarnim kazanima i strpljivo sazrevana — dok pitomost ne postane ukus. Jedno selo, jedan voćnjak, jedna priča.',
-    'spotlight-cta-find': 'Pronađi Skasku',
-    'spotlight-cta-story': 'Bajka o šljivi',
-    'awards-strip-title': 'Nagrađivana širom sveta',
-    'award-points': 'poena',
-    'award-points-2': 'poena',
-    'award-top5': 'finalista',
-    'award-silver': 'Srebro',
-    'award-medal': 'medalja',
     'footer-definition': 'Skaska (ref. Rečnik) – usmena pripovetka sa elementima fantastike koja se prenosi sa kolena na koleno',
     'mellow-title': 'Mekoća',
     'mellow-desc': 'Kada smo poželeli da obuhvatimo duh i boje, nenadmašnu lepotu Šumadije u jednoj posebnoj osobini, izabrali smo: MEKOĆU.',

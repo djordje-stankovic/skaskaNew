@@ -5937,206 +5937,25 @@ select:focus-visible,
 }
 
 /* =============================================
-   2026 REFRESH — Hero tagline, Spotlight, Awards
+   HEADER SCROLL EFEKAT (prebačeno iz redesign.css)
+   Na skrol hero sekcije header se "spusti i podigne":
+   providna gradijent podloga -> zamućena tamna na .scrolled
    ============================================= */
-
-/* Gold text selection */
-::selection {
-  background: var(--gold-primary);
-  color: var(--black);
+.header {
+  padding: 26px 48px;
+  background: linear-gradient(180deg, rgba(10, 8, 5, 0.72), rgba(10, 8, 5, 0));
+  transition: padding 0.3s ease, background 0.4s ease;
 }
 
-/* Product Spotlight */
-.spotlight-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: 70px;
-  align-items: center;
+.header.scrolled {
+  background: rgba(12, 9, 6, 0.82);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(201, 162, 75, 0.18);
 }
 
-.spotlight-image {
-  position: relative;
-}
-
-.spotlight-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-  filter: saturate(0.95);
-  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.spotlight-image::before {
-  content: '';
-  position: absolute;
-  inset: 14px -14px -14px 14px;
-  border: 1px solid rgba(188, 139, 11, 0.35);
-  pointer-events: none;
-  transition: inset 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: -1;
-}
-
-.spotlight-image:hover::before {
-  inset: 8px -8px -8px 8px;
-}
-
-.spotlight-image:hover img {
-  transform: scale(1.02);
-}
-
-.spotlight-title {
-  font-family: var(--font-heading) !important;
-  font-weight: 300;
-  font-size: clamp(1.7rem, 2.8vw, 2.4rem) !important;
-  line-height: 1.35;
-  margin-bottom: 22px;
-}
-
-.spotlight-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  margin-top: 35px;
-}
-
-.btn-ghost {
-  border-color: rgba(255, 255, 255, 0.35);
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.btn-ghost::before {
-  background: var(--white);
-}
-
-.btn-ghost:hover {
-  border-color: var(--white);
-  color: var(--black);
-}
-
-/* Awards Strip */
-.home-awards .section-content {
-  text-align: center;
-}
-
-.awards-strip-heading {
-  margin-bottom: 45px;
-}
-
-.awards-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  max-width: 980px;
-  margin: 0 auto;
-}
-
-.award-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 24px;
-  text-decoration: none;
-  color: inherit;
-  border-left: 1px solid rgba(188, 139, 11, 0.25);
-  transition: var(--transition-fast);
-}
-
-.award-item:first-child {
-  border-left: none;
-}
-
-.award-score {
-  font-family: var(--font-heading);
-  font-weight: 400;
-  font-size: clamp(2.2rem, 3.6vw, 3.2rem);
-  line-height: 1.1;
-  color: var(--gold-primary);
-  transition: var(--transition-fast);
-}
-
-a.award-item:hover .award-score {
-  color: var(--gold-light);
-}
-
-.award-points {
-  font-family: var(--font-menu);
-  font-size: 10px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--text-gray);
-}
-
-.award-name {
-  font-family: var(--font-menu);
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.75);
-  margin-top: 8px;
-  max-width: 200px;
-}
-
-a.award-item:hover .award-name {
-  color: var(--white);
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .spotlight-grid {
-    grid-template-columns: 1fr;
-    gap: 45px;
-  }
-
-  .spotlight-image {
-    max-width: 380px;
-    margin: 0 auto;
-  }
-
-  .spotlight-text {
-    text-align: center;
-  }
-
-  .spotlight-actions {
-    justify-content: center;
-  }
-
-  .awards-strip {
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 45px;
-  }
-
-  .award-item:nth-child(3) {
-    border-left: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .awards-strip {
-    grid-template-columns: 1fr;
-    row-gap: 35px;
-  }
-
-  .award-item {
-    border-left: none;
-    border-top: 1px solid rgba(188, 139, 11, 0.25);
-    padding-top: 30px;
-  }
-
-  .award-item:first-child {
-    border-top: none;
-    padding-top: 10px;
-  }
-}
-
-/* Respect reduced-motion preferences site-wide */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-
-  html {
-    scroll-behavior: auto;
+@media (max-width: 768px) {
+  .header.scrolled {
+    background: rgba(12, 9, 6, 0.94);
   }
 }
