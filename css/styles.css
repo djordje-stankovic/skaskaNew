@@ -2732,28 +2732,15 @@ section.section-transparent:has(.stores-grid) {
     gap: 15px;
   }
 
-  body[data-page="contact"] .header {
-    padding: 20px;
-  }
-
   .header.scrolled {
     padding: 12px 20px;
     gap: 10px;
-  }
-
-  body[data-page="contact"] .header.scrolled {
-    padding: 12px 20px;
   }
 
   .header .logo {
     margin-right: auto;
     flex-shrink: 0;
     max-width: calc(50% - 40px);
-  }
-
-  /* Contact: logo malo ulevo na mobilnoj */
-  body[data-page="contact"] .header .logo {
-    margin-left: 4px;
   }
 
   .header.scrolled .logo {
