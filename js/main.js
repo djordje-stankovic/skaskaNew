@@ -1147,7 +1147,7 @@ const translations = {
     'where-phone': 'Phone:',
     'where-show-map': 'Show on Map',
     'where-partner-title': 'Become a Partner',
-    'where-partner-desc': 'For distribution and partnership inquiries, please contact us directly.',
+    'where-partner-desc': 'For distribution and export inquiries, please contact us directly.',
     'where-partner-btn': 'Contact Us',
 
     // === CONTACT PAGE ===
