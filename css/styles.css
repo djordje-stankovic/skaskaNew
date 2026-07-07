@@ -5936,15 +5936,13 @@ select:focus-visible,
   transition: padding 0.3s ease, background 0.4s ease;
 }
 
-.header.scrolled {
-  background: rgba(12, 9, 6, 0.82);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(201, 162, 75, 0.18);
-}
-
+/* Desktop/laptop: header na skrol ostaje providan (gradient) kao pri vrhu –
+   bez tamne podloge. Tamna podloga + blur se primenjuju samo na mobilnom. */
 @media (max-width: 768px) {
   .header.scrolled {
     background: rgba(12, 9, 6, 0.94);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(201, 162, 75, 0.18);
   }
 }

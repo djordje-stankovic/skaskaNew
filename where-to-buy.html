@@ -57,7 +57,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css?v=3">
+  <link rel="stylesheet" href="css/styles.css?v=4">
   <link rel="stylesheet" href="css/logo-animations.css?v=3">
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
@@ -210,7 +210,7 @@
                 <img src="https://theboxshop.rs/wp-content/uploads/2023/09/box-shop-logo-black.png" alt="The Box Shop" class="store-logo">
                 <div class="store-info">
                   <h4>The Box Shop</h4>
-                  <span data-i18n="where-box-address">4 locations</span>
+                  <span data-i18n="where-box-address">3 locations</span>
                 </div>
                 <svg class="store-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <polyline points="9 18 15 12 9 6"></polyline>
@@ -303,7 +303,7 @@
             </div>
             <div class="store-detail">
               <strong data-i18n="where-address">Address:</strong>
-              <span data-i18n="where-box-address">4 locations</span>
+              <span data-i18n="where-box-address">3 locations</span>
             </div>
             <div class="store-detail">
               <strong data-i18n="where-phone">Phone:</strong>
@@ -439,7 +439,7 @@
     </div>
   </div>
 
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js?v=4" defer></script>
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script>
@@ -480,14 +480,6 @@
         lng: 19.8491239,
         address: 'Bulevar Mihajla Pupina 13, Novi Sad',
         phone: '021/3026117',
-        hours: 'Radnim danom 9h-22h, subotom 9h-22h, nedeljom 13h-21h'
-      },
-      {
-        name: 'Premium shop',
-        lat: 45.2567148,
-        lng: 19.8479109,
-        address: 'Zmaj Jovina 28, Novi Sad',
-        phone: '021/3027752',
         hours: 'Radnim danom 9h-22h, subotom 9h-22h, nedeljom 13h-21h'
       },
       {
@@ -680,8 +672,8 @@
 
     // Show all Box Shop locations
     function showBoxShopLocations() {
-      const boxShopStores = stores.filter(s => 
-        s.name.includes('BOX') || s.name.includes('Premium shop')
+      const boxShopStores = stores.filter(s =>
+        s.name.includes('BOX')
       );
       
       if (boxShopStores.length > 0) {

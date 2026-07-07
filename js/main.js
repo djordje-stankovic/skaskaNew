@@ -100,55 +100,52 @@ function initPreloader() {
 
   if (!preloader) return;
 
+  let hidden = false;
+
+  // Force-hide the preloader immediately (used as a fallback and on bfcache restore)
+  const hidePreloader = () => {
+    if (hidden) return;
+    hidden = true;
+    preloader.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+    stopPouringSound();
+    window.dispatchEvent(new CustomEvent('preloaderHidden'));
+  };
+
+  // Animate the counter from 0 to 100, then hide
+  const runCounter = () => {
+    if (hidden) return;
+    let count = 0;
+    const interval = setInterval(() => {
+      count += 5; // Jump by 5% for faster animation
+      if (count > 100) count = 100;
+      if (counter) counter.textContent = count;
+
+      if (count >= 100) {
+        clearInterval(interval);
+        setTimeout(hidePreloader, 200);
+      }
+    }, 10); // 10ms interval = faster animation
+  };
+
   // Start playing pouring sound when preloader starts
   playPouringSound();
 
-  // Check if page is already loaded
-  const checkLoaded = () => {
-    if (document.readyState === 'complete') {
-      // Page is loaded, animate quickly
-      let count = 0;
-      const interval = setInterval(() => {
-        count += 5; // Jump by 5% for faster animation
-        if (count > 100) count = 100;
-        if (counter) counter.textContent = count;
+  // Start the animation as soon as the page is ready.
+  if (document.readyState === 'complete') {
+    runCounter();
+  } else {
+    window.addEventListener('load', runCounter);
+  }
 
-        if (count >= 100) {
-          clearInterval(interval);
-          setTimeout(() => {
-            preloader.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-            stopPouringSound();
-            // Dispatch custom event when preloader is hidden
-            window.dispatchEvent(new CustomEvent('preloaderHidden'));
-          }, 200);
-        }
-      }, 10); // 10ms interval = faster animation
-    } else {
-      // Page still loading, wait a bit then animate
-      window.addEventListener('load', () => {
-        let count = 0;
-        const interval = setInterval(() => {
-          count += 5;
-          if (count > 100) count = 100;
-          if (counter) counter.textContent = count;
+  // Safety fallback: never leave the preloader stuck on screen
+  setTimeout(hidePreloader, 4000);
 
-          if (count >= 100) {
-            clearInterval(interval);
-            setTimeout(() => {
-              preloader.classList.add('hidden');
-              document.body.style.overflow = 'auto';
-              stopPouringSound();
-              // Dispatch custom event when preloader is hidden
-              window.dispatchEvent(new CustomEvent('preloaderHidden'));
-            }, 200);
-          }
-        }, 10);
-      });
-    }
-  };
-
-  checkLoaded();
+  // Handle back/forward navigation restored from the bfcache:
+  // load/DOMContentLoaded do NOT fire again, so hide the preloader instantly.
+  window.addEventListener('pageshow', (e) => {
+    if (e.persisted) hidePreloader();
+  });
 }
 
 /* =============================================
@@ -1146,7 +1143,7 @@ const translations = {
     'where-type-wine': 'Wine & Spirits Shop',
     'where-address': 'Address:',
     'where-rakija-address': '2 locations',
-    'where-box-address': '4 locations',
+    'where-box-address': '3 locations',
     'where-phone': 'Phone:',
     'where-show-map': 'Show on Map',
     'where-partner-title': 'Become a Partner',
@@ -1531,7 +1528,7 @@ const translations = {
     'where-type-wine': 'Vinoteka',
     'where-address': 'Adresa:',
     'where-rakija-address': '2 lokacije',
-    'where-box-address': '4 lokacije',
+    'where-box-address': '3 lokacije',
     'where-phone': 'Telefon:',
     'where-show-map': 'Prikaži na mapi',
     'where-partner-title': 'Postanite Partner',
@@ -1839,11 +1836,12 @@ function initCustomCursor() {
   let basePath = '';
   for (let i = 0; i < scripts.length; i++) {
     if (scripts[i].src.includes('main.js')) {
-      basePath = scripts[i].src.replace('js/main.js', '');
+      // Strip "js/main.js" and any query string (e.g. ?v=4) to get the base path
+      basePath = scripts[i].src.replace(/js\/main\.js.*$/, '');
       break;
     }
   }
-  
+
   const logoPath = basePath + 'images/logo/s-logo-gold.png';
   cursor.innerHTML = '<img src="' + logoPath + '" alt="" onerror="this.style.display=\'none\'">';
   document.body.appendChild(cursor);
@@ -2022,7 +2020,8 @@ function initPageTransitions() {
   var basePath = '';
   for (var i = 0; i < scripts.length; i++) {
     if (scripts[i].src.includes('main.js')) {
-      basePath = scripts[i].src.replace('js/main.js', '');
+      // Strip "js/main.js" and any query string (e.g. ?v=4) to get the base path
+      basePath = scripts[i].src.replace(/js\/main\.js.*$/, '');
       break;
     }
   }
@@ -2066,6 +2065,15 @@ function initPageTransitions() {
     setTimeout(function() {
       window.location.href = href;
     }, 500);
+  });
+
+  // When returning via back/forward (bfcache), the overlay may be restored in
+  // its "leaving" state (black curtain over the page). Reset it so the page shows.
+  window.addEventListener('pageshow', function(e) {
+    if (e.persisted) {
+      overlay.classList.remove('leaving');
+      overlay.classList.remove('entering');
+    }
   });
 }
 
